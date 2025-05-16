@@ -1,0 +1,116 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 142 49% 95%;
+    --foreground: 142 50% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 142 50% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 142 50% 12%;
+    --primary: 142 47% 36%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 93% 47%;
+    --secondary-foreground: 142 50% 12%;
+    --muted: 142 20% 96%;
+    --muted-foreground: 142 20% 40%;
+    --accent: 45 93% 47%;
+    --accent-foreground: 142 50% 12%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 142 20% 90%;
+    --input: 142 20% 90%;
+    --ring: 142 47% 36%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 142 50% 12%;
+    --foreground: 142 49% 95%;
+    --card: 142 50% 15%;
+    --card-foreground: 142 49% 95%;
+    --popover: 142 50% 15%;
+    --popover-foreground: 142 49% 95%;
+    --primary: 142 47% 36%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 93% 47%;
+    --secondary-foreground: 142 50% 12%;
+    --muted: 142 20% 20%;
+    --muted-foreground: 142 20% 70%;
+    --accent: 45 93% 47%;
+    --accent-foreground: 142 50% 12%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 142 20% 25%;
+    --input: 142 20% 25%;
+    --ring: 142 47% 36%;
+  }
+
+  body {
+    @apply font-sans bg-background text-foreground overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .khair-btn-primary {
+    @apply bg-khair hover:bg-khair-600 text-white transition-colors duration-200;
+  }
+  
+  .khair-card {
+    @apply bg-card border border-border/50 shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+
+  .islamic-pattern-bg {
+    @apply relative;
+  }
+
+  .islamic-pattern-bg::before {
+    content: '';
+    @apply absolute inset-0 bg-islamic-pattern opacity-5 pointer-events-none;
+  }
+}
+
+@layer utilities {
+  .arabic {
+    font-family: 'Cairo', sans-serif;
+  }
+
+  .text-overlay {
+    @apply relative z-10;
+  }
+
+  .text-overlay::before {
+    content: '';
+    @apply absolute inset-0 bg-background/90 backdrop-blur-sm z-[-1] rounded-md;
+  }
+
+  .menu-card {
+    @apply khair-card p-4 flex flex-col items-center gap-3 w-full transition-all duration-200 
+           hover:scale-105 active:scale-95;
+  }
+
+  .icon-circle {
+    @apply rounded-full p-3 bg-opacity-20 transition-colors duration-200;
+  }
+
+  .icon-circle-success {
+    @apply bg-green-100;
+  }
+
+  .icon-circle-primary {
+    @apply bg-blue-100;
+  }
+
+  .icon-circle-warning {
+    @apply bg-yellow-100;
+  }
+
+  .icon-circle-purple {
+    @apply bg-purple-100;
+  }
+}
