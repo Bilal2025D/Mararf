@@ -1,0 +1,51 @@
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Touch-friendly tap targets */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Safe area insets for mobile devices */
+  .safe-padding-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .safe-padding-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  /* Mobile optimized hover states */
+  @media (hover: hover) {
+    .hover-scale {
+      @apply transition-transform duration-200;
+    }
+    .hover-scale:hover {
+      @apply scale-105;
+    }
+  }
+
+  /* Non-hover devices */
+  @media (hover: none) {
+    .active-scale:active {
+      @apply scale-95 transition-transform duration-100;
+    }
+  }
+
+  /* Mobile optimized text (prevent selection on tap) */
+  .mobile-text {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
